@@ -1,4 +1,5 @@
 {
+  "name": "okta-fork-oidc",
   "private": true,
   "version": "1.0.0",
   "devDependencies": {
