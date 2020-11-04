@@ -63,7 +63,10 @@ oidcUtil.createClient = context => {
     return options;
   };
 
-  return Issuer.discover(issuer +  '/.well-known/openid-configuration')
+  // Monash Uni OKTA modification
+  const modIssuer = issuer.endsWith("/default") ? issuer : issuer + '/default'; 
+
+  return Issuer.discover(modIssuer  +  '/.well-known/openid-configuration')  
   .then(iss => {
     const client = new iss.Client({
       client_id,
